@@ -1,0 +1,12 @@
+[
+  { "geometry": {"coordinates": [51.801653, 143.154497]},
+    "properties": {
+      "balloonContent": "тут у нас какой то текст",
+      "iconCaption": "Библиотека №1",
+      "balloonContentHeader": "Библиотека №1"
+    },
+    "options": {
+      "preset": "islands#darkBlueDotIconWithCaption"
+    }
+  }
+]
