@@ -4,11 +4,49 @@
     left: 0;
     width: 100%;
     height: 100%;
+    font-family: 'Roboto', sans-serif;
 }
 
 #map {
     width: 100%;
     height: 100%;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+}
+
+.button-container > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button-container > div:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    background-color: #FFF;
+}
+
+.logo > img {
+    width: 60%;
+    padding: 10px;
+}
+
+.sightseeings-button, .street-button {
+    color: #FFF;
+    background-color: #009fe3;
+    width: 270px;
+    height: 40px;
 }
 
 .img {
