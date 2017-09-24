@@ -27,10 +27,12 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: background-color 0.5s ease;
 }
 
 .button-container > div:hover {
-    text-decoration: underline;
+    background-color: #047caf;
+
 }
 
 .logo {
@@ -51,6 +53,7 @@
 
 .active {
     text-decoration: underline;
+    background-color: #047caf;
 }
 
 .img {

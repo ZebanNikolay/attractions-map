@@ -1,7 +1,9 @@
 "use strict";
+
 ymaps.ready(init);
 
-var options = {preset: "islands#violetIcon"},
+var sightseeingsOptions = {preset: "islands#violetIcon"},
+    streetOptions = {preset: "islands#redIcon"},
     myMap;
 
 function init() {
@@ -11,14 +13,14 @@ function init() {
         controls: ["rulerControl", "typeSelector", "zoomControl", "geolocationControl"]
     });
 
-    initPlacemarks(sightseeingsPlacemarks);
+    initPlacemarks(sightseeingsPlacemarks, sightseeingsOptions);
 
-    function initPlacemarks(placemarks) {
+    function initPlacemarks(placemarks, options) {
         myMap.geoObjects.removeAll();
         placemarks.forEach(function (item) {
             item.properties.balloonContentBody = [
                 '<address>',
-                '<img class="img" src="' + item.data.img + '"/>',
+                '<img class="img" src="' + item.data.img + '" data-action="zoom"/>',
                 '<br/>',
                 item.properties.balloonContent,
                 '<br/>',
@@ -29,18 +31,19 @@ function init() {
         });
     }
 
-    var switchActive = function (button, placemarks) {
-        $(document).ready(function(){
-            button.click(function(){
+    function switchActive(button, placemarks, options) {
+        $(document).ready(function () {
+            button.click(function () {
                 $("div.active").removeClass("active");
                 $(this).addClass("active");
-                initPlacemarks(placemarks);
+                initPlacemarks(placemarks, options);
             });
         });
 
     };
 
-    switchActive($(".sightseeings-button"), sightseeingsPlacemarks);
-    switchActive($(".street-button"), streetsPlacemarks);
+    switchActive($(".sightseeings-button"), sightseeingsPlacemarks, sightseeingsOptions);
+    switchActive($(".street-button"), streetsPlacemarks, streetOptions);
 
 }
+
